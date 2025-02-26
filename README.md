@@ -1,167 +1,130 @@
-# 🚀 Essential Git Commands with Examples
+# 📌 Essential & Advanced Git Commands with Examples
 
-This README provides a **quick reference** to the **20 most commonly used Git commands**, along with their **use cases** and **examples**.
+This document provides a **comprehensive guide** to the **most commonly used** Git commands, including **basic**, **intermediate**, and **advanced** commands to help you effectively manage your repositories.
 
 ---
 
-## 1️⃣ git init
+## 🚀 Essential Git Commands
+
+### 1️⃣ `git init`
 - **Use case**: Initialize a new Git repository.
 - **Example**:
   ```bash
   git init
   ```
 
----
-
-## 2️⃣ git clone
-- **Use case**: Clone an existing repository from a remote source.
+### 2️⃣ `git clone`
+- **Use case**: Clone an existing repository.
 - **Example**:
   ```bash
-  git clone https://github.com/username/repository.git
+  git clone <repository-url>
   ```
 
----
+### 3️⃣ `git add`
+- **Use case**: Stage changes for commit.
+- **Example**:
+  ```bash
+  git add <file-name>
+  git add .  # Add all changes
+  ```
 
-## 3️⃣ git status
-- **Use case**: Check the status of changes in the working directory.
+### 4️⃣ `git commit`
+- **Use case**: Save changes to the repository.
+- **Example**:
+  ```bash
+  git commit -m "Your commit message here"
+  ```
+
+### 5️⃣ `git status`
+- **Use case**: Show the state of the working directory and staging area.
 - **Example**:
   ```bash
   git status
   ```
 
----
-
-## 4️⃣ git add
-- **Use case**: Stage changes for commit.
-- **Example**:
-  ```bash
-  git add file.txt         # Stage a single file
-  git add .                # Stage all changes
-  ```
-
----
-
-## 5️⃣ git commit
-- **Use case**: Commit staged changes with a descriptive message.
-- **Example**:
-  ```bash
-  git commit -m "Added new feature"
-  ```
-
----
-
-## 6️⃣ git log
+### 6️⃣ `git log`
 - **Use case**: View commit history.
 - **Example**:
   ```bash
-  git log
+  git log --oneline --graph
   ```
 
----
-
-## 7️⃣ git branch
+### 7️⃣ `git branch`
 - **Use case**: List, create, or delete branches.
-- **Example**:
+- **Examples**:
   ```bash
-  git branch feature-branch  # Create a new branch
-  git branch                 # List all branches
+  git branch  # List all branches
+  git branch <new-branch>  # Create a new branch
+  git branch -d <branch-name>  # Delete a branch
   ```
 
----
-
-## 8️⃣ git checkout
-- **Use case**: Switch between branches.
+### 8️⃣ `git checkout`
+- **Use case**: Switch to a different branch.
 - **Example**:
   ```bash
-  git checkout feature-branch
+  git checkout <branch-name>
   ```
 
----
-
-## 9️⃣ git merge
-- **Use case**: Merge changes from one branch into another.
+### 9️⃣ `git merge`
+- **Use case**: Merge one branch into another.
 - **Example**:
   ```bash
-  git merge feature-branch
+  git merge <branch-name>
   ```
 
----
-
-## 🔟 git pull
-- **Use case**: Fetch changes from a remote repository and merge them into the local branch.
+### 🔟 `git pull`
+- **Use case**: Fetch and merge changes from a remote repository.
 - **Example**:
   ```bash
   git pull origin main
   ```
 
----
-
-## 1️⃣1️⃣ git push
+### 1️⃣1️⃣ `git push`
 - **Use case**: Push local commits to a remote repository.
 - **Example**:
   ```bash
   git push origin main
   ```
 
----
-
-## 1️⃣2️⃣ git remote
-- **Use case**: Manage remote repositories.
+### 1️⃣2️⃣ `git remote`
+- **Use case**: Manage remote connections.
 - **Example**:
   ```bash
-  git remote -v             # List remote repositories
-  git remote add origin URL # Add a remote repository
+  git remote -v  # View remote URLs
+  git remote add origin <repository-url>
   ```
 
----
-
-## 1️⃣3️⃣ git stash
-- **Use case**: Temporarily save changes without committing.
+### 1️⃣3️⃣ `git fetch`
+- **Use case**: Fetch changes from the remote repository without merging.
 - **Example**:
   ```bash
-  git stash
-  git stash pop             # Apply the stashed changes
+  git fetch origin
   ```
 
----
+### 1️⃣4️⃣ `git reset`
+- **Use case**: Undo changes.
+- **Examples**:
+  ```bash
+  git reset --soft HEAD~1  # Undo last commit (keep changes staged)
+  git reset --hard HEAD~1  # Undo last commit (discard changes)
+  ```
 
-## 1️⃣4️⃣ git rebase
-- **Use case**: Reapply commits on top of another base branch.
+### 1️⃣5️⃣ `git rebase`
+- **Use case**: Reapply commits on top of another base commit.
 - **Example**:
   ```bash
   git rebase main
   ```
 
----
-
-## 1️⃣5️⃣ git reset
-- **Use case**: Undo changes by resetting the commit history.
+### 1️⃣6️⃣ `git stash`
+- **Use case**: Temporarily save changes.
 - **Example**:
   ```bash
-  git reset --hard HEAD~1   # Reset the last commit
+  git stash
+  git stash pop  # Apply stashed changes
   ```
 
----
-
-## 1️⃣6️⃣ git revert
-- **Use case**: Create a new commit that undoes a previous commit.
-- **Example**:
-  ```bash
-  git revert commit_hash
-  ```
-
----
-
-## 1️⃣7️⃣ git diff
-- **Use case**: Show differences between files.
-- **Example**:
-  ```bash
-  git diff HEAD
-  ```
-
----
-
-## 1️⃣8️⃣ git tag
+### 1️⃣7️⃣ `git tag`
 - **Use case**: Create version tags.
 - **Example**:
   ```bash
@@ -169,28 +132,100 @@ This README provides a **quick reference** to the **20 most commonly used Git co
   git push origin v1.0.0
   ```
 
----
-
-## 1️⃣9️⃣ git cherry-pick
-- **Use case**: Apply a specific commit from another branch.
+### 1️⃣8️⃣ `git diff`
+- **Use case**: Show differences between commits.
 - **Example**:
   ```bash
-  git cherry-pick commit_hash
+  git diff
+  ```
+
+### 1️⃣9️⃣ `git revert`
+- **Use case**: Undo a commit while keeping history.
+- **Example**:
+  ```bash
+  git revert <commit-hash>
+  ```
+
+### 2️⃣0️⃣ `git cherry-pick`
+- **Use case**: Apply a specific commit from one branch to another.
+- **Example**:
+  ```bash
+  git cherry-pick <commit-hash>
   ```
 
 ---
 
-## 2️⃣0️⃣ git config
-- **Use case**: Configure Git settings.
+## 🚀 Advanced Git Commands
+
+### 2️⃣1️⃣ `git bisect`
+- **Use case**: Find a bug by binary search.
 - **Example**:
   ```bash
-  git config --global user.name "Your Name"
-  git config --global user.email "your.email@example.com"
+  git bisect start
+  git bisect bad
+  git bisect good <commit-hash>
+  ```
+
+### 2️⃣2️⃣ `git reflog`
+- **Use case**: View reference logs for HEAD movements.
+- **Example**:
+  ```bash
+  git reflog
+  ```
+
+### 2️⃣3️⃣ `git blame`
+- **Use case**: Show last modification for each line of a file.
+- **Example**:
+  ```bash
+  git blame filename
+  ```
+
+### 2️⃣4️⃣ `git show`
+- **Use case**: Display information about a commit.
+- **Example**:
+  ```bash
+  git show <commit-hash>
+  ```
+
+### 2️⃣5️⃣ `git clean`
+- **Use case**: Remove untracked files.
+- **Example**:
+  ```bash
+  git clean -f
+  ```
+
+### 2️⃣6️⃣ `git cherry`
+- **Use case**: Show unmerged commits.
+- **Example**:
+  ```bash
+  git cherry -v main feature-branch
+  ```
+
+### 2️⃣7️⃣ `git commit --amend`
+- **Use case**: Modify the last commit.
+- **Example**:
+  ```bash
+  git commit --amend -m "Updated commit message"
+  ```
+
+### 2️⃣8️⃣ `git worktree`
+- **Use case**: Manage multiple working trees.
+- **Example**:
+  ```bash
+  git worktree add ../new-feature-branch feature-branch
+  ```
+
+### 2️⃣9️⃣ `git archive`
+- **Use case**: Create a compressed archive of a repository.
+- **Example**:
+  ```bash
+  git archive --format=zip HEAD > repo.zip
   ```
 
 ---
 
-### 🎯 **Conclusion**
-This guide provides **20 essential Git commands** to streamline your workflow. Mastering these will help you efficiently manage your **repositories, branches, commits, and merges**.
+## 🎯 Conclusion
+These Git commands cover **everything from basics to advanced techniques**, making you proficient in version control. 🚀
+ 
+🔹 **Happy Coding!** 😃
 
-> Keep coding and happy Git-ing! 🚀
